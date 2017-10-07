@@ -25,14 +25,13 @@ wget http://hgdownload.soe.ucsc.edu/goldenPath/dm3/multiz15way/chrXHet.maf.gz
 wget http://hgdownload.soe.ucsc.edu/goldenPath/dm3/multiz15way/chrYHet.maf.gz
 
 
-
-
+  #Unzip each file
 for i in *.*.gz;do 
     gunzip -c ${i} > $i.maf 
 done
 
 fi
-
+   # Move droSim1 toward the begining of each multi-alignment block and remove any block that does not contain droSim
 for i in *.maf;do 
     maf_parse -O droSim1,dm3,droSec1,droYak2,droEre2,droAna3,dp4,droPer1,droWil1,droVir3,droMoj3,droGri2,anoGam1,apiMel3,triCas2 "$i" > `basename $i`.new.maf
 done
