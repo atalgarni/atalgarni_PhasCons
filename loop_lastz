@@ -1,4 +1,1 @@
-for i in tParts/*.2bit; do 
-    for j in qParts/*.2bit; do
-        lastz "$i"[multiple] $j M=0 K=2200 L=4000 H=2000 Y=3400 T=1 --scores=DroX.q / 
-        --format=maf > MAF/Sim1.Yak2/`basename $i .fa`-`basename $j .fa`.maf; done; done | parallel
+for i in tParts/*.2bit; do for j in qParts/*.2bit; do lastz "$i"[multiple] $j M=0 K=2200 L=4000 H=2000 Y=3400 T=1 --scores=DroX.q --format=maf > MAF/Sim1.Yak2/`basename $i .fa`-`basename $j .fa`.maf; done; done | parallel
