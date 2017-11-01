@@ -1,0 +1,1 @@
+parallel -j 40 bash pairWiseAlign.sh ::: /tParts/*.2bit /qParts/*.2bit
